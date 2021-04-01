@@ -1,4 +1,4 @@
-images: | bullseye bullseye-dev
+build: | bullseye bullseye-dev
 
 bullseye:
 	docker build -t bearstech/debian:bullseye .
@@ -14,3 +14,8 @@ bullseye-dev:
 pull:
 	docker pull debian:bullseye-slim
 
+tests:
+	echo "TODO"
+
+push:
+	echo "TODO"
