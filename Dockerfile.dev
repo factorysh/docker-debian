@@ -1,0 +1,28 @@
+FROM bearstech/debian:bullseye
+
+RUN set -eux \
+    &&  apt-get update \
+    &&  apt-get install -y --no-install-recommends \
+            build-essential \
+            ca-certificates \
+            curl \
+            git \
+            mercurial \
+    &&  apt-get clean \
+    &&  rm -rf /var/lib/apt/lists/*
+
+CMD ["/bin/bash"]
+
+# generated labels
+
+ARG GIT_VERSION
+ARG GIT_DATE
+ARG BUILD_DATE
+
+LABEL com.bearstech.image.revision_date=${GIT_DATE}
+
+LABEL org.opencontainers.image.authors=Bearstech
+
+LABEL org.opencontainers.image.revision=${GIT_VERSION}
+LABEL org.opencontainers.image.created=${BUILD_DATE}
+
