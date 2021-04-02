@@ -19,3 +19,16 @@ RUN printf "en_US.UTF-8 UTF-8\nfr_FR.UTF-8 UTF-8\n" > /etc/locale.gen \
     && dpkg-reconfigure -f noninteractive tzdata
     #&& echo "deb http://deb.bearstech.com/debian bullseye-bearstech main" > /etc/apt/sources.list.d/bullseye-bearstech.list \
 
+# generated labels
+
+ARG GIT_VERSION
+ARG GIT_DATE
+ARG BUILD_DATE
+
+LABEL \
+    com.bearstech.image.revision_date=${GIT_DATE} \
+    org.opencontainers.image.authors=Bearstech \
+    org.opencontainers.image.revision=${GIT_VERSION} \
+    org.opencontainers.image.created=${BUILD_DATE} \
+    org.opencontainers.image.url=https://github.com/factorysh/docker-debian \
+    org.opencontainers.image.source=https://github.com/factorysh/docker-debian/blob/${GIT_VERSION}/Dockerfile

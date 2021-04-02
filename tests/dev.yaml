@@ -1,0 +1,7 @@
+---
+
+command:
+  "which gcc":
+    exit-status: 0
+    stdout:
+      - /usr/bin/gcc
