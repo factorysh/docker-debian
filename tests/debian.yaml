@@ -1,0 +1,7 @@
+---
+
+command:
+  "cat /etc/debian_version":
+    exit-status: 0
+    stdout:
+      - bullseye

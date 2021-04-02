@@ -29,5 +29,10 @@ bin/goss:
 	chmod +x bin/goss
 
 tests: bin/goss
-	echo "TODO"
+	@docker run --rm -t \
+		-v `pwd`/bin/goss:/usr/local/bin/goss \
+		-v `pwd`/tests:/goss \
+		-w /goss \
+		bearstech/debian:bullseye \
+		goss -g debian.yaml validate --max-concurrent 4 --format documentation
 
