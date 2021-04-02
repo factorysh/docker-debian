@@ -26,7 +26,9 @@ ARG GIT_DATE
 ARG BUILD_DATE
 
 LABEL \
-    com.bearstech.image.revision_date=${GIT_DATE} \
+    com.bearstech.image.debian.created=${GIT_DATE} \
+    com.bearstech.image.debian.revision=${GIT_VERSION} \
+    com.bearstech.image.debian.version=11 \
     org.opencontainers.image.authors=Bearstech \
     org.opencontainers.image.revision=${GIT_VERSION} \
     org.opencontainers.image.created=${BUILD_DATE} \
