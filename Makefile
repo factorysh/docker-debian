@@ -54,3 +54,6 @@ test-dev: bin/goss-${GOSS_VERSION}
 		bearstech/debian-dev:bullseye \
 		goss -g dev-all.yaml validate --max-concurrent 4 --format documentation
 
+down:
+	@echo "Nothing to do."
+
