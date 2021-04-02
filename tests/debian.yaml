@@ -6,6 +6,12 @@ command:
     stdout:
       - bullseye
 
+  "locale -a":
+    exit-status: 0
+    stdout:
+      - en_US.utf8
+      - fr_FR.utf8
+
   "cat /etc/timezone":
     exit-status: 0
     stdout:
