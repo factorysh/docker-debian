@@ -9,6 +9,6 @@ RUN set -eux \
     && rm -rf /var/lib/apt/lists/* \
     && locale-gen \
     && echo "Europe/Paris" > /etc/timezone \
-	&& ln -fs /usr/share/zoneinfo/Europe/Paris /etc/localtime \
-	&& dpkg-reconfigure -f noninteractive tzdata
+    && ln -fs /usr/share/zoneinfo/Europe/Paris /etc/localtime \
+    && dpkg-reconfigure -f noninteractive tzdata
 
