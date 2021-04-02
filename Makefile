@@ -9,7 +9,10 @@ images: | bullseye bullseye-dev
 pull:
 	docker pull debian:bullseye-slim
 
-bullseye:
+bearstech-archive.gpg:
+	curl -s https://deb.bearstech.com/bearstech-archive.gpg -o bearstech-archive.gpg
+
+bullseye: bearstech-archive.gpg
 	docker build -t bearstech/debian:bullseye .
 	docker tag bearstech/debian:bullseye bearstech/debian:11
 

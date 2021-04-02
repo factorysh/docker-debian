@@ -6,8 +6,12 @@ command:
     stdout:
       - bullseye
 
-command:
   "cat /etc/timezone":
     exit-status: 0
     stdout:
       - Europe/Paris
+
+  "which vi":
+    exit-status: 0
+    stdout:
+      - /usr/bin/vi
