@@ -10,6 +10,12 @@ images: | bullseye bullseye-dev
 pull:
 	docker pull debian:bullseye-slim
 
+push:
+	docker push bearstech/debian:bullseye
+	docker push bearstech/debian:11
+	docker push bearstech/debian-dev:bullseye
+	docker push bearstech/debian-dev:11
+
 bearstech-archive.gpg:
 	curl -s https://deb.bearstech.com/bearstech-archive.gpg -o bearstech-archive.gpg
 
@@ -26,9 +32,6 @@ bullseye-dev:
 		-f Dockerfile.dev \
 	.
 	docker tag bearstech/debian-dev:bullseye bearstech/debian-dev:11
-
-push:
-	echo "TODO"
 
 bin/goss-${GOSS_VERSION}:
 	mkdir -p bin
