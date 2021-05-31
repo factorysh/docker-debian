@@ -16,10 +16,7 @@ push:
 	docker push bearstech/debian-dev:bullseye
 	docker push bearstech/debian-dev:11
 
-bearstech-archive.gpg:
-	curl -s https://deb.bearstech.com/bearstech-archive.gpg -o bearstech-archive.gpg
-
-bullseye: bearstech-archive.gpg
+bullseye:
 	docker build \
 		$(DOCKER_BUILD_ARGS) \
 		-t bearstech/debian:bullseye .
@@ -38,6 +35,8 @@ bin/goss-${GOSS_VERSION}:
 	curl -o bin/goss-${GOSS_VERSION} -L https://github.com/aelsabbahy/goss/releases/download/v${GOSS_VERSION}/goss-linux-amd64
 	chmod +x bin/goss-${GOSS_VERSION}
 	cd bin && ln -sf goss-${GOSS_VERSION} goss
+
+build: bullseye bullseye-dev
 
 tests: test-debian
 

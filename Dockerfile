@@ -1,5 +1,7 @@
 FROM debian:bullseye-slim
 
+ENV DEBIAN_FRONTEND="noninteractive"
+
 RUN set -eux \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -15,6 +17,8 @@ RUN printf "en_US.UTF-8 UTF-8\nfr_FR.UTF-8 UTF-8\n" > /etc/locale.gen \
     && echo "Europe/Paris" > /etc/timezone \
     && ln -fs /usr/share/zoneinfo/Europe/Paris /etc/localtime \
     && dpkg-reconfigure -f noninteractive tzdata
+
+ENV LANG="en_US.UTF-8"
 
 # generated labels
 
