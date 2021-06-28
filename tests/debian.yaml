@@ -4,7 +4,7 @@ command:
   "cat /etc/debian_version":
     exit-status: 0
     stdout:
-      - bullseye
+      - "/11\\.\\d+/"
 
   "locale -a":
     exit-status: 0
